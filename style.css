@@ -52,16 +52,30 @@
 }
 
 #cooldiv{
-    width: 200%; 
-    height: 200%; 
+    width: 200vw; 
+    height: 200vh; 
     position: absolute; 
     top: -50%; 
     left: -50%; 
     background-image: url(tile.gif);
-    background-size: 12.5%;
+    background-size: 25%;
     animation-duration: 8s;
     /*animation-name: rocktheboatplusgrow;*/
     animation-name: circle;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+body{
+    font-family: "Comic Sans MS", cursive;
+    background: linear-gradient(#62a600, #006b95, #793900);
+}
+
+@media only screen and (max-width: 600px) {
+    #cooldiv{
+        background-size: 80vw;
+        left:-60%;
+        top: -60%;
+        width: 500%;
+    }
 }
