@@ -37,8 +37,9 @@
 }
 
 @keyframes circle{
-    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+    /* Thanks to https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/ */
+    from { transform: rotate(0deg) translateX(5%) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(5%) rotate(-360deg); }
 }
 
 #containerdiv{
@@ -58,8 +59,9 @@
     left: -50%; 
     background-image: url(tile.gif);
     background-size: 12.5%;
-    animation-duration: 5s;
+    animation-duration: 8s;
     /*animation-name: rocktheboatplusgrow;*/
     animation-name: circle;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
