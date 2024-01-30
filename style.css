@@ -16,30 +16,45 @@
 @keyframes rocktheboatplusgrow{
     from{
         transform: rotate(0deg);
-        background-size: 12.5%;
+        background-size: 30vw;
     }
     15%{
         transform: rotate(45deg);
-        background-size: 25%;
+        background-size: 50vw;
     }
     50%{
         transform: rotate(0deg);
-        background-size: 12.5%;
+        background-size: 75vw;
     }
     85%{
         transform: rotate(-45deg);
-        background-size: 25%;
+        background-size: 50vw;
     }
     to{
         transform: rotate(0deg);
-        background-size: 12.5%;
+        background-size: 30vw;
     }
 }
 
 @keyframes circle{
     /* Thanks to https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/ */
-    from { transform: rotate(0deg) translateX(5%) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(5%) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(25vw) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(25vw) rotate(-360deg); }
+}
+
+@keyframes spin{
+    from { transform: rotate(0deg);}
+    to   { transform: rotate(360deg);}
+}
+
+@keyframes zigzag{
+    from{ top: -250vh; left: -250vw; }
+    15% { top: -250vh; left: -260vw; }
+    30% { top: -260vh; left: -250vw; }
+    45% { top: -260vh; left: -260vw; }
+    60% { top: -270vh; left: -250vw; }
+    75% { top: -270vh; left: -260vw; }
+    to  { top: -250vh; left: -250vw; }
 }
 
 #containerdiv{
@@ -52,13 +67,13 @@
 }
 
 #cooldiv{
-    width: 200vw; 
-    height: 200vh; 
+    width: max(500vw, 500vh); 
+    height:  max(500vw, 500vh); 
     position: absolute; 
-    top: -50%; 
-    left: -50%; 
+    top: min(-250vw, -250vh); 
+    left: min(-250vw, -250vh);
     background-image: url(tile.gif);
-    background-size: 25%;
+    background-size: 25vw;
     animation-duration: 8s;
     /*animation-name: rocktheboatplusgrow;*/
     animation-name: circle;
@@ -74,8 +89,5 @@ body{
 @media only screen and (max-width: 600px) {
     #cooldiv{
         background-size: 80vw;
-        left:-60%;
-        top: -60%;
-        width: 500%;
     }
 }
